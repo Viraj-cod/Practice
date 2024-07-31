@@ -1,0 +1,16 @@
+#Learned about the collection module in python
+from collections import deque
+d = deque()
+c = int(input())
+for i in range(c):
+    j = input().split()
+    intrv= int(j[1])
+    if j[0] == 'append': 
+        d.append(intr)
+    elif j[0] == 'appendleft':
+        d.appendleft(intr)
+    elif j[0] == 'pop':
+        d.pop()
+    elif j[0] == 'popleft':
+        d.popleft()
+print(*d)
