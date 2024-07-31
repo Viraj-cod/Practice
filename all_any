@@ -1,0 +1,14 @@
+#With this code i got to know about tha all and any in python
+n = int(input())
+nlst = list(map(int,input().split()))
+palindrome = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99, 101]
+
+al = all(i > 0 for i in nlst) 
+an = any(i in palindrome for i in nlst)
+
+if al == True and an == True:
+    print('True')
+else:
+    print('False')
+
+        
