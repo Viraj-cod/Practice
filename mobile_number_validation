@@ -1,0 +1,34 @@
+import string
+lower = string.ascii_lowercase
+upper = string.ascii_uppercase
+al = lower+upper
+def ln(st):
+    if len(st) == 10:
+        return True
+def alph(st):
+    count = 0
+    for i in st:
+        if i not in al:
+            count = count + 1
+    if count == len(st):
+        return True
+
+def ini(st):
+    nm = ['7','8','9']
+    if st[0] in nm:
+        return True
+        
+tms = int(input())
+des = []
+for i in range(tms):
+    ph_no = input()
+    first = ln(ph_no)
+    second = alph(ph_no)
+    third = ini(ph_no)
+    if first == True and second == True and third == True:
+        des.append('YES')
+    else:
+        des.append('NO')
+
+for i in des:
+    print(i)
