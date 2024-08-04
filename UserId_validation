@@ -1,0 +1,72 @@
+import string
+def upper_check(st):
+    lst = string.ascii_uppercase
+    count = 0
+    for i in lst:
+        if i in lst:
+            count = count + 1
+    if count >= 2:
+        return True
+    else:
+        return False
+        
+def digit_check(st):
+    num = ['0','1','2','3','4','5','6','7','8','9']
+    count = 0
+    for i in st:
+        if i in num:
+            count = count + 1
+    if count >= 3:
+        return True
+    else:
+        return False
+
+def no_repeat(st):
+    temp = []
+    for i in st:
+        if i not in temp:
+            temp.append(i)
+    if len(temp) == len(st):
+        return True
+    else:
+        return False
+
+def len_check(st):
+    if len(st) == 10:
+        return True
+    else:
+        return False
+        
+def alph(st):
+    num = ['0','1','2','3','4','5','6','7','8','9']
+    up_lo = string.ascii_lowercase + string.ascii_uppercase + ''.join(num)
+    count = 0
+    for i in st:
+        if i in up_lo:
+            count = count + 1
+    if count == len(st):
+        return True
+    else:
+        return False
+        
+if __name__ == '__main__':
+    res = []
+    rep = int(input())
+    for i in range(rep):
+        usd = input()
+        up = upper_check(usd)
+        dig = digit_check(usd)
+        alnm = alph(usd)
+        repeat = no_repeat(usd)
+        size = len_check(usd)
+        if up == True and dig == True and alnm == True and repeat == True and size == True:
+            res.append('Valid')
+        else:
+            res.append('Invalid')
+    
+    for i in res:
+        print(i)
+        
+    
+    
+        
