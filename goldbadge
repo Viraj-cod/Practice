@@ -1,0 +1,25 @@
+def merge_the_tools(string, k):
+    a = []
+    n = 0
+    l = 0 
+    flag = 0
+    for i in range(1,len(string)+1):
+        n = l * k
+        if i % k == 0:
+            a.append(string[n:i])
+            l = l + 1
+        elif len(string[n:]) < k and flag == 0:
+            a.append(string[n:])
+            flag = 1
+    
+    for i in a:
+        v = []
+        for x in i:
+            if x not in v:
+                v.append(x)
+        f = ''.join(v)
+        print(f)
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
