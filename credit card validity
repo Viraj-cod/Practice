@@ -1,0 +1,107 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+def ini(st):
+    if st[0] in ['4','5','6']:
+        return True
+    else:
+        return False
+        
+def len_check(st):
+    if len(st) == 16 and '-' not in st:
+        return True 
+    elif '-' in st and len(st) == 19:
+        return True
+    else:
+        return False
+
+def dig(st):
+    if '-' in st:
+        d = ['1','2','3','4','5','6','7','8','9','0','-']
+        flag = 0
+        for i in st:
+            if i not in d:
+                flag = 1
+        if flag == 0:
+            return True
+        else:
+            return False
+    else:
+        d = ['1','2','3','4','5','6','7','8','9','0']
+        flag = 0
+        for i in st:
+            if i not in d:
+                flag = 1
+        if flag == 0:
+            return True
+        else:
+            return False
+
+def grp(st):
+    if '-' in st:
+        flag = 0
+        crd = st.split('-')
+        for i in crd:
+            if len(i) != 4:
+                flag = 1
+        if flag == 0:
+            return True
+        else:
+            return False
+    else:
+        return True
+
+def sep(st):
+    if ' ' not in st and '_' not in st:
+        return True
+    else:
+        return False
+
+def cons(st):
+    if '-' in st:
+        new = ''
+        for i in st:
+            if i == '-':
+                continue
+            else:
+                new = new+i
+        flag = 0
+        for i in new:
+            w = i*4
+            if w in new:
+                flag = 1
+        if flag == 0:
+            return True
+        else:
+            return False
+    else:
+        flag = 0
+        for i in st:
+            w = i*4
+            if w in st:
+                flag = 1
+        if flag == 0:
+            return True
+        else:
+            return False
+        
+        
+if __name__ == '__main__':
+    res = []
+    nm = int(input())
+    for i in range(nm):
+        card = input()
+        first = ini(card)
+        second = len_check(card)
+        third = dig(card)
+        four = grp(card)
+        five = sep(card)
+        six = cons(card)
+        if first == True and second == True and third == True and four == True and five == True and six == True: 
+            res.append('Valid')
+        else:
+            res.append('Invalid')
+    for i in res:
+        print(i)
+
+                
+            
