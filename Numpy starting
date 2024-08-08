@@ -1,0 +1,10 @@
+import numpy
+
+def arrays(arr):
+    ints = list(map(float,arr))
+    b = numpy.array(ints[::-1],float)
+    return b
+
+arr = input().strip().split(' ')
+result = arrays(arr)
+print(result)
