@@ -1,0 +1,12 @@
+import numpy
+
+dim = input().split()
+A = []
+B = []
+for i in range(int(dim[0])):
+    ele = list(map(int,input().split()))
+    A.append(ele)
+for i in range(int(dim[1])):
+    ele = list(map(int,input().split()))
+    B.append(ele)
+print(numpy.concatenate((A,B),axis = 0))
