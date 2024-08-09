@@ -1,0 +1,20 @@
+#Enter your code here. Read input from STDIN. Print output to STDOUT
+dim = list(map(int,input().split()))
+ls = []
+add = []
+for i in range(dim[0]):
+    ele = list(map(int,input().split()))
+    ls.append(ele)
+for j in range(len(ls)):
+    ad = []
+    for i in range(len(ls)):
+        ad.append(ls[i][j])
+    add.append(sum(ad))
+i = 0
+mul = 1
+while i < len(add):
+    mul = mul * add[i]
+    i = i + 1
+print(mul)
+
+
