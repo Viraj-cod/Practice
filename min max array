@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+dim = list(map(int,input().split()))
+mn = []
+for i in range(dim[0]):
+    val = list(map(int,input().split()))
+    less = min(val)
+    mn.append(less)
+
+print(max(mn))
