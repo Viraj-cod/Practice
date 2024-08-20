@@ -5,5 +5,5 @@ def fibonacci_simple(n):
         sequence.append(a)
         a, b = b, a + b
     return sequence
-
-print(fibonacci_simple(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+x = int(input())
+print(fibonacci_simple(x)) 
