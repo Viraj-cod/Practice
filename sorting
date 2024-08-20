@@ -1,0 +1,18 @@
+f = [6,5,7,2,1]
+g = []
+g.extend(f)
+for i in f:
+    emp = -1
+    for j in f:
+        if i > j or i == j:
+            emp = emp + 1
+    g[emp] = i
+print(g)
+            
+            
+            
+    
+    
+    
+            
+        
