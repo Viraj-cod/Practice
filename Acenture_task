@@ -1,0 +1,22 @@
+s = input()
+temp = []
+start =0
+for i in range(1,len(s)):
+    if s[i].isupper() and s[i - 1].islower():
+        temp.append(s[start:i])
+        start = i
+temp.append(s[start:])
+new = []
+
+for i in temp:
+    tm = ''
+    for x in i:
+        if x.islower():
+           j = x.upper()
+           tm = tm + j
+        elif x.isupper():
+            a = x.lower()
+            tm = tm + a
+    new.append(tm) 
+for _ in new:
+    print(_)
