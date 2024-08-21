@@ -1,0 +1,14 @@
+while 1:
+    n=int(input("enter the number to find the fibonacci:"))
+    first=0
+    second=1
+
+    for i in range(n):
+        if n<=1:
+            next = i
+        else:
+            next=first + second
+            first=second
+            second=next
+        print(next)
+
