@@ -1,0 +1,8 @@
+arr = list(map(int,input().split()))
+count = 1
+for i in range(len(arr) - 1):
+    emp = arr[i:]
+    mx = max(emp)
+    if arr[i] >= mx:
+        count = count + 1
+print(count)
