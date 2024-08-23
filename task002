@@ -1,0 +1,10 @@
+arr = list(map(int,input().split()))
+n = int(input())
+count = 0
+
+if len(arr) == n:
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if i < j and arr[i] > arr[j]:
+                count = count + 1
+print(count)
