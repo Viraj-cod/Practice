@@ -1,0 +1,24 @@
+n = int(input())
+# st = 010101
+count= 0
+h = []
+k = []
+st = input()
+for i in st:
+    h.append(int(i))
+k.extend(h)
+if n == len(st):
+    for i in range(len(h)):
+        vd = len(h) - 1
+        if i != vd:
+            ls = h[i:]
+            #[0,1,0,1,0,1]
+            if h[i] != ls[1] and ls[1] != 1:
+                k.remove(h[i])
+                count = count + 1
+print(k)
+print(count)
+            
+            
+            
+    
