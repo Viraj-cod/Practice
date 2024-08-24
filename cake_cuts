@@ -1,0 +1,9 @@
+def birthday(n):
+    sq = n ** 2
+    res = sq + n + 2
+    return (res/2) % 1000000007
+    
+cut = int(input("Number of cuts on the cake:"))
+#n**2+n+2/2
+res = birthday(cut)
+print(int(res))
