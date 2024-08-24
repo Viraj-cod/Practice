@@ -1,0 +1,11 @@
+ele = int(input())
+div = []
+
+for i in range(1,ele):
+    if ele % i == 0:
+        div.append(i)
+add = sum(div)
+if add == ele:
+    print(f"{ele} is a perfect number")
+else:
+    print(f'{ele} is not a perfect number')
