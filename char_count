@@ -1,0 +1,14 @@
+st = 'jjmskjjmmkkss'
+uni = set(st)
+dik = {}
+for i in uni:
+    count = 0
+    for j in st:
+        if i == j:
+            count = count + 1
+    dik[i] = count
+for i in dik.items():
+    print(i)
+    
+    
+    
