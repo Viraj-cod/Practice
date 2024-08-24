@@ -1,0 +1,11 @@
+n = input()
+#method1
+print(n[::-1])
+#method2
+l = list(n)
+l.reverse()
+st = ''
+for i in l:
+    st = st +i
+print(st)
+
