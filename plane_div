@@ -1,0 +1,11 @@
+#program includes how many parts we get after making n line on a plane
+class solution:
+    def res(self,n):
+        res = 2
+        for i in range(1,n):
+            res = res + (i+1)
+        return res
+line = int(input("Enter the no. of lines on the plane:"))
+res = solution()
+final = res.res(line)
+print(final)
