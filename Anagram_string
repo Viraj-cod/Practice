@@ -1,0 +1,12 @@
+st = input().split()
+st1 = [x for x in st[0]]  
+st2 = [x for x in st[1]]  
+ln = len(st2)
+count = 0
+for i in st2:
+    if i in st1:
+        count = count + 1
+if ln == count:
+    print("Yes the strings are Anagram")
+else:
+    print("No the string are not Anagram")
