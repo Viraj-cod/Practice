@@ -1,0 +1,7 @@
+st = input()
+rev = st[::-1]
+
+if st == rev:
+    print('The string is palindrome')
+else:
+    print('The string is not palindrome')
