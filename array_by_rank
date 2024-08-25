@@ -1,0 +1,19 @@
+inp = list(map(int,input().split()))
+inpt = sorted(inp)
+temp = []
+for i in inpt:
+    if i not in temp:
+        temp.append(i)
+dik = {}
+res = []
+for i in range(len(temp)):
+    dik[i+1] = temp[i]
+for val in inp:
+    for i,j in dik.items():
+        if j == val:
+            res.append(i)
+print(res)
+
+
+
+
