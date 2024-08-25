@@ -1,0 +1,20 @@
+def sub_change():
+    main_str = input("Enter the main string:")
+    sub_str = input("Enter the substring which you want to replace:")
+    new_str = input("Enter the new string:")
+
+    mn_lst = list(main_str.lower())
+    sb_lst = list(sub_str.lower())
+    nw_lst = list(new_str.lower())
+    cnt = len(sb_lst)
+    for i in range(len(mn_lst)):
+        if mn_lst[i:i+cnt] == sb_lst:
+            mn_lst[i:i+cnt] = nw_lst 
+            break
+    swap = ''
+    for i in mn_lst:
+        swap =swap + i
+    res = swap.capitalize()
+    print(res)
+
+sub_change()
