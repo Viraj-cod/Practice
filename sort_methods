@@ -1,0 +1,26 @@
+j = [8,5,2,9]
+# method 1 ,descending order
+st = sorted(j,reverse = True)
+print(st)
+# method 2 ,ascending order
+j.sort()
+print(j)
+#method 3,ascending order
+st = sorted(j)
+print(st)
+#method 4,descending order
+j.sort(reverse = True)
+print(j)
+#method 5,without using sort or sorted method
+d = [9,5,8,3,4,7]
+new = []
+new.extend(d)
+sort = []
+for i in range(len(d)):
+    count = 0
+    for j in range(len(d)):
+        if d[i] > d[j]:#just change the middle sign to get the ascending or descending order 
+            count = count + 1
+    new[count] = d[i]
+print(new)
+    
