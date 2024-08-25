@@ -1,0 +1,14 @@
+def uni(st):
+    temp = set(st)
+    no_repeat = []
+    for i in st:
+        count = 0
+        for j in st:
+            if i == j:
+                count = count + 1
+        if count == 1:
+            no_repeat.append(i)
+    print("\nunique elements in string are {} ".format(no_repeat))
+
+strng = input("Enter a string to get unique values in it:")
+uni(strng)
