@@ -1,0 +1,10 @@
+inp = list(map(str,input().split()))
+rev = []
+for i in inp:
+    ult = i[::-1]
+    if i == ult:
+        rev.append(len(i))
+mx = max(rev)
+res =[i for i in inp if len(i) == mx]
+print(*res)
+        
