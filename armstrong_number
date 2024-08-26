@@ -1,0 +1,17 @@
+def armstrong(n):
+    lst = [int(i) for i in n]
+    ln = len(lst)
+    res = 0
+    for i in lst:
+        res = res + (i**ln)
+    if res == int(n):
+        return True
+inp = input("Enter a number:")
+res = armstrong(inp)
+if res == 1:
+    print(f'{inp} is an armstrong number')
+else:
+    print(f'{inp} is not an armstrong number')
+
+        
+    
