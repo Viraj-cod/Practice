@@ -1,0 +1,32 @@
+def mat(n):
+    res = []
+    for i in range(1,n+1):
+        inp = list(map(int,input(f"Enter the elements of the {i}st row:").split()))
+        res.append(inp)
+    return res
+def add(mat1,mat2):
+    res = []
+    for i in range(len(mat1)):
+        temp= []
+        for j in range(len(mat1[i])):
+            res1 = mat1[i][j] + mat2[i][j]
+            temp.append(res1)
+        res.append(temp)
+    return res
+
+if __name__ == '__main__':
+    ln_frst = int(input("Enter the lenght of the first matrix:"))
+    ln_scnd = int(input("Enter the lenght of the second matrix:"))
+    print("First matrix")
+    mt1 = mat(ln_frst)
+    print("Second matrix")
+    mt2 = mat(ln_scnd)
+    ans = add(mt1,mt2)
+    print(f'The resultant after addind the two matrix is {ans}')
+    
+            
+            
+        
+    
+
+
