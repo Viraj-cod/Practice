@@ -1,0 +1,17 @@
+import string
+def rem(st):
+    up = string.ascii_uppercase
+    low = string.ascii_lowercase
+    tot = up + low
+    res = ''
+    for i in st:
+        if i in tot:
+            res = res + i
+    return res
+if __name__ == '__main__':
+    inp = input("Enter the string:")
+    print(rem(inp))
+        
+    
+    
+    
