@@ -1,0 +1,11 @@
+def auto(n):
+    stn = str(n)
+    res = str(n**2)
+    if stn[-1] == res[-1]:
+        print(f"{n} is an automorphic number")
+    else:
+        print(f'{n} is not an automorphic number')
+if __name__ == '__main__':
+    inp = int(input("Enter a number:"))
+    auto(inp)
+    
