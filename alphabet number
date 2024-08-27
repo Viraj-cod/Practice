@@ -1,0 +1,21 @@
+import string
+def check(n):
+    up = string.ascii_uppercase
+    low = string.ascii_lowercase
+    dict1 = {}
+    dict2 = {}
+    st = 65
+    lst = 97
+    for i in range(len(up)):
+        dict1[up[i]] = st +i
+    for j in range(len(low)):
+        dict2[low[j]] = lst + j
+    com = {**dict1,**dict2}
+    for i,j in com.items():
+        if i == n:
+            return j
+if __name__ == '__main__':
+    inp = input("Enter the character:")
+    print(check(inp))
+
+    
