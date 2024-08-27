@@ -1,0 +1,24 @@
+def binary_conv(n):
+    res = 2
+    temp = [1,]
+    add = 1
+    for i in range(1,len(str(n))):
+        r = add * res
+        add = r
+        temp.append(r)
+    val = temp[::-1]
+    lne = [x for x in str(n)]
+    ln = len(lne)
+    res = 0
+    for i in range(len(str(n))):
+        if lne[i] == '1':
+            res = res + val[i]
+    return res
+
+if __name__ == '__main__':
+    inp = int(input("Enter a binary number:"))
+    res = binary_conv(inp)
+    print(f'{inp} in decimal is {res}')
+    
+        
+        
