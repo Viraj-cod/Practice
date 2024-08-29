@@ -1,0 +1,23 @@
+def prm(n):
+    count = 0
+    for i in range(1,n+1):
+        if n % i == 0:
+            count += 1
+    if count == 2:
+        return True
+    else:
+        return False
+
+def prime(n):
+    res = []
+    for i in range(1,n+1):
+        temp = prm(i)   
+        if temp == True:
+            res.append(i)
+    return res
+
+if __name__ == '__main__':
+    inp = int(input())
+    res = prime(inp)
+    print(*res)
+    
