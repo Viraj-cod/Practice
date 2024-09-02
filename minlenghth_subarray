@@ -1,0 +1,14 @@
+x = 51
+arr = [1,4,45,6,0,19]
+ln = []
+res=[]
+for i in range(len(arr)):
+    for j in range(len(arr)):
+        temp = arr[i:j]
+        if sum(temp) > 51:
+            res.append(temp)
+            break
+for i in res:
+    ln.append(len(i))
+print(min(ln))
+        
