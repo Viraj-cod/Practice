@@ -1,0 +1,9 @@
+st1 = 'fodr' 
+str2 = 'gork'
+k = 2
+temp = [i for i in st1 if i not in str2]
+temp2 = [i for i in str2 if i not in st1]
+if len(st1) == len(str2) and len(temp) >= k and len(temp2) >= k:
+    print(1)
+else:
+    print('False')
