@@ -1,0 +1,19 @@
+from itertools import product
+
+def generate_combinations(binary_string):
+    placeholder_positions = [pos for pos, char in enumerate(binary_string) if char == '?']
+    combinations = product('01', repeat=len(placeholder_positions))
+    results = []
+    for combo in combinations:
+        combo_list = list(combo)
+        new_string = list(binary_string)
+        for pos, placeholder in zip(placeholder_positions, combo_list):
+            new_string[pos] = placeholder
+        results.append(''.join(new_string))
+    return results
+
+# Example usage
+binary_string = '1?0?'
+results = generate_combinations(binary_string)
+for result in results:
+    print(result)
