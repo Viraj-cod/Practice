@@ -1,0 +1,8 @@
+arr = [34,8,10,3,2,80,30,33,1]
+res = []
+for i in range(len(arr)):
+    for j in range(len(arr)):
+        if arr[i] <= arr[j] and i<=j:
+            temp = j - i
+            res.append(temp)
+print(max(res))
