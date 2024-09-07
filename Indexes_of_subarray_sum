@@ -1,0 +1,35 @@
+def add(lst,s):#s = 12
+    sm = 0
+    for i in range(len(lst)):
+        sm = sm + lst[i]
+        if sm == s:
+            return lst[i]
+            break
+        
+def res(lst,s):
+    a = 0
+    b = 0
+    res = []
+    for i in range(len(lst)):
+        fin = add(lst[i:],s)        
+        if fin:
+            a = lst[i]
+            b = fin
+            break
+    for i in range(len(lst)):
+        if a >= 1: 
+            if lst[i] == a or lst[i] == b:
+                res.append(i+1)
+    if res:
+        return res
+    else:
+        return [-1]
+if __name__ == '__main__':
+    arr = list(map(int,input("Enter the main array:").split()))
+    trg = int(input("enter the targeted number:"))
+    func2 = res(arr,trg)
+    print(*func2)
+        
+    
+    
+    
