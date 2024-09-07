@@ -1,0 +1,15 @@
+def singlenumber(arr):
+    temp = []
+    for i in arr:
+        count = 0
+        for j in arr:
+            if i == j:
+                count = count + 1
+        if count == 1:
+            temp.append(i)
+    return temp
+
+if __name__ == '__main__':
+    inp = list(map(int,input().split()))
+    res = singlenumber(inp)
+    print(*res)
