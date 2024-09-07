@@ -1,0 +1,11 @@
+def strstr(str1,target):
+    if target in str1:
+        return 1
+    else:
+        return -1
+if __name__ == '__main__':
+    base = input("Enter the main string:")
+    trg = input("Enter the taregeted string:")
+    print(strstr(base,trg))
+
+    
