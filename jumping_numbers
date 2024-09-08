@@ -1,0 +1,18 @@
+def jumpingNums(x):
+    res = []
+    for i in range(x):
+        if i < 10:
+            res.append(i)
+        else:
+            temp = str(i)
+            x = int(temp[0])
+            y = int(temp[1])
+            if x - y == 1 or y - x == 1:
+                rem = int(temp)
+                res.append(rem)
+    return res
+if __name__ == '__main__':
+    inp = int(input("Enter a number"))
+    res = jumpingNums(inp)
+    print(max(res))
+            
