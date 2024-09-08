@@ -1,0 +1,22 @@
+def fib():
+    a = 0
+    b = 1
+    res = [0,1]
+    for i in range(100):
+        c = a + b
+        res.append(c)
+        a = b
+        b = c
+    return res
+
+def check(arr):
+    temp = fib()
+    res = []
+    for i in arr:
+        if i in temp:
+            res.append(i)
+    return res
+
+if __name__ == '__main__':
+    lst = list(map(int,input().split()))
+    print(check(lst))
