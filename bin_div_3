@@ -1,0 +1,9 @@
+def isDivisible(n):
+    dec = int(n,2)
+    if dec % 3 == 0:
+        return 1
+    else:
+        return 0
+if __name__ == '__main__':
+    inp = input("enter the binary number:")
+    print(isDivisible(inp))
