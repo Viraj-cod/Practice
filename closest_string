@@ -1,0 +1,12 @@
+r =  ['the','quick','brown','fox','quick']
+s1 = 'the'
+s2 = 'fox'
+ind1 = 0
+ind2 = 0
+for i in range(len(r)):
+    if r[i] == s1:
+        ind1 = i
+    elif r[i] == s2:
+        ind2 = i
+print(len(r[ind1:ind2]))
+        
