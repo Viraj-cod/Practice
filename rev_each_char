@@ -1,0 +1,9 @@
+s = 'i.like.this.program.very.much'
+out = s.split('.')
+rev = []
+res = ''
+for i in out:
+    rev.append(i[::-1])
+for i in rev:
+    res = res + '.'+ i
+print(res)
