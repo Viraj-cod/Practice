@@ -1,0 +1,31 @@
+//Traditional function
+const vow = ['a','i','o','u','e'];
+function func(strg){
+    let count = 0;
+    for(char of strg){
+        for(chr of vow){
+            if(char === chr){
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+//Arrow function
+let ar = strg =>{
+    let count = 0;
+    for(char of strg){
+        for(chr of vow){
+            if(char === chr){
+                count++;
+            }
+        }
+    }
+    return count;
+}
+let inp = 'viraj';
+let res = func(inp);
+let arr = ar(inp)
+console.log(res);
+console.log(arr);
