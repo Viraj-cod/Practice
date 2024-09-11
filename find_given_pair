@@ -1,0 +1,14 @@
+def findpair(x,arr):
+    count = 0
+    for i in arr:
+        for j in arr:
+            if i - j == x or i - j == -x:
+                count = 1
+    if count == 1:
+        return 1
+    else:
+        return -1
+if __name__ == '__main__':
+    trg = int(input())
+    arr = list(map(int,input().split()))
+    print(findpair(trg,arr))
