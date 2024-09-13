@@ -1,0 +1,34 @@
+import string
+char = string.ascii_uppercase
+st = '123'
+alph = {}
+res = []
+last = ''
+x = 1
+for i in char:
+    alph[x] = i
+    x += 1
+
+if '0' not in st:
+    for i in range(1,len(st)):
+        temp = st[:i] + ' '
+        men = temp +st[i:]
+        k = men.split()
+        cont = ''
+        for i in k:
+            for j in alph.keys():
+                if int(i) == j and i != ' ':
+                    cont = cont + alph[j]
+        res.append(cont)
+if '0' not in st:
+    for i in st:
+        for j in alph.keys():
+            if int(i) == j:
+                last = last + alph[j]
+    res.append(last)
+if res:           
+    print(len(res))
+else:
+    print(0)
+
+
