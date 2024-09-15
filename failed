@@ -1,0 +1,31 @@
+def substring(st):
+    res = []
+    for i in range(len(st)):
+        for j in range(len(st)+1):
+            k = st[i:j]
+            res.append(k)
+    app = []
+    for i in res:
+        if i not in app:
+            app.append(i)
+    return app
+
+def itr(num):
+    lst = list(num)
+    temp = []
+    anek = []
+    rsl = []
+    temp.extend(lst)
+    for i in range(len(lst)):
+        temp.remove(lst[i])
+        temp.insert(0,lst[i])
+        res = substring(temp)
+        anek.extend(res)
+    for i in anek:
+        tmp = ''.join(i)
+        if tmp not in rsl:
+            rsl.append(tmp)
+    return rsl
+print(itr('123'))
+
+        
