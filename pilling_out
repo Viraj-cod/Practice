@@ -1,0 +1,29 @@
+def pilling_out(b):
+    emp = []
+    e = []
+    e.extend(b)
+    for i in range(len(b)):
+        if b[0] >= b[-1]:
+            emp.append(b[0])
+            b.remove(b[0])
+        elif b[0] <= b[-1]:
+            emp.append(b[-1])
+            b.remove(b[-1])
+    e.sort()
+    if emp == e[::-1]:
+        return 'Yes'
+    else:
+        return 'No'
+
+if __name__ == '__main__':
+    inp = int(input())
+    res = []
+    for i in range(inp):
+        a = input()
+        lst = list(map(int,input().split()))
+        temp = pilling_out(lst)
+        res.append(temp)
+    for i in res:
+        print(i)
+        
+            
