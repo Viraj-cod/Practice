@@ -1,0 +1,9 @@
+n = input()
+arr1 = list(map(int,input().split()))
+m = input()
+arr2 = list(map(int,input().split()))
+
+res = arr1 + arr2
+res.sort()
+print(f'arr1[] = {res[:len(arr1)]}')
+print(f'arr2[] = {res[len(arr1):]}')
