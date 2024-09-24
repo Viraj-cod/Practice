@@ -1,0 +1,4 @@
+lst = list(map(int,input("Enter a array:").split()))
+num = int(input("Enter a number:"))
+lst.sort()
+print(lst[num-1])
