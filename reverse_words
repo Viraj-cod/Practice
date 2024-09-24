@@ -1,0 +1,6 @@
+strng = input()
+temp = strng.split('.')
+res=''
+for i in temp[::-1]:
+    res = res + i + '.'
+print(res[0:-1])
