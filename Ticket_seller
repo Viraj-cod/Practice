@@ -1,0 +1,4 @@
+arr = list(map(int,input("Enter the ticket qauntity:").split()))
+k = int(input("Enter the tickets allowed to sell for seller::"))
+arr.sort(reverse = True)
+print(sum(arr[:k]))
