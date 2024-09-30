@@ -1,0 +1,12 @@
+arr = list(map(int,input().split()))
+new = sorted(arr)
+res= []
+fres = []
+for i in range(len(arr)):
+    if arr[i] == new[i]:
+        continue
+    else:
+        res.append(i)
+fres.append(res[0])
+fres.append(res[-1])
+print(fres)
