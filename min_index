@@ -1,0 +1,16 @@
+def minindex(st1,st2):
+    res = []
+    for i in st1:
+        count = 0
+        for j in st2:
+            if i == j:
+                count += 1
+        if count > 0:
+            res.append(i)
+    if res:
+        return res[0]
+    else:
+        return -1
+a = 'geeksforgeeks'
+b = 'set'
+print(minindex(a,b))
