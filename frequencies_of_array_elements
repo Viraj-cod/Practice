@@ -1,0 +1,15 @@
+def num(arr):
+    ln = len(arr)
+    res = []
+    for i in range(1,(ln+1)):
+        count = 0
+        for j in arr:
+            if i == j:
+                count += 1
+        res.append(count)
+    return res
+
+if __name__ == '__main__':
+    inp = list(map(int,input("Enter the array:").split()))
+    print(num(inp))
+    
