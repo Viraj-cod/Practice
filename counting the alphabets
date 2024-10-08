@@ -1,0 +1,16 @@
+a = 'aaabbbbccc'
+d = {}
+res= ''
+for i in a:
+    if i not in d.keys():
+        d[i] = i
+for i in d.keys():
+    count = 0
+    for j in a:
+        if i == j:
+            count += 1
+    d[i] = count    
+for i in d:
+    res += i
+    res += str(d[i])
+print(res)
