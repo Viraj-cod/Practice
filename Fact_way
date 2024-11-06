@@ -1,0 +1,10 @@
+def fact(n):
+    temp = n
+    for i in range(1,n):
+        m = temp - i
+        n = n*m
+    return n
+
+if __name__ == '__main__':
+    num = int(input("Enter the value to get the factorial:"))
+    print(f'factorial of {num} is :{fact(num)}')
