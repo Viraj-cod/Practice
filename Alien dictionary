@@ -1,0 +1,23 @@
+def alien_dict(arr):
+    order = []
+    for i in range(len(arr)):
+        if i < len(arr) - 1:
+            for j in range(len(arr[i])):
+                if arr[i][j] != arr[i+1][j]:
+                    if arr[i][j] not in order:
+                        order.append(arr[i][j])
+                        break
+        elif i == len(arr) - 1:
+            for j in arr[i]:
+                if j not in order:
+                    order.append(j)
+    return order
+            
+if __name__ == '__main__':
+    array = list(map(str,input("Enter the dictionary words:").split()))
+    arr = [i for i in array if i !=' ']
+    res = alien_dict(arr)
+    if res:
+        print(1)
+    else:
+        print(0)
