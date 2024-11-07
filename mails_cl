@@ -1,0 +1,22 @@
+pre = '23mcar0'
+suf = '@jainuniversity.ac.in'
+res = []
+for i in range(1,119):
+    if i < 10:
+        pre = '23mcar000'
+        temp = pre + str(i) + suf
+        res.append(temp)
+    elif 10 < i < 100: 
+        pre = '23mcar00'
+        temp = pre + str(i) + suf
+        res.append(temp)
+    else:
+        pre = '23mcar0'
+        temp = pre + str(i) + suf
+        res.append(temp)
+
+mail = input("Enter your mail:")
+if mail in res:
+    print('jain mail')
+else:
+    print('invalid')
