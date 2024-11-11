@@ -1,0 +1,13 @@
+def find_pairs(arr, target):
+    pairs = []
+    for i in arr:
+        for j in arr:
+            if i + j == target:
+                pairs.append((i,j))
+    return pairs
+
+
+arr = [2, 4, 6, 3, 5, 1]
+target = 7
+pairs = find_pairs(arr, target)
+print(pairs)
