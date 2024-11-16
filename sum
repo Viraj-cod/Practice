@@ -1,0 +1,36 @@
+class Perfect_sum:
+    def find(self,x,y):
+        res = []
+        z = []
+        for i in range(len(x)):
+           lst = x[i:]
+           res.extend(self.sub(lst,y))
+        for i in range(len(x)):
+           lst = x[i:]
+           res.extend(self.sub(lst[::-1],y))
+        for i in res:
+            if i not in z:
+                z.append(i)
+        return z
+            
+    def addition(self,ele):
+        add = 0
+        for i in ele:
+            add = add + i
+        return add
+        
+    def sub(self,x,y):
+        res = []
+        for i in range(len(x)):
+            for j in range(len(x)):
+                if x[j] not in x[:i]:
+                    temp = x[:i] + x[j:j+1]
+                    if self.addition(temp) == y and temp not in res:
+                        res.append(temp)
+        return res
+
+if __name__ == '__main__':
+    arr = list(map(int,input("Enter the elements:").split()))
+    trg = int(input("Enter the sum:"))
+    obj = Perfect_sum()
+    print(obj.find(arr,trg))
