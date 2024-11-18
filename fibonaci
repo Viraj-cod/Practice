@@ -1,0 +1,11 @@
+n = int(input("Enter the number:"))
+a = 0
+print(a)
+b = 1
+print(b)
+for i in range(n):
+    temp = a + b
+    print(temp,end=' ')
+    a = b
+    b = temp
+#0,1,1,2,3,5,8,13,21,34
