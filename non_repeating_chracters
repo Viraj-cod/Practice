@@ -1,0 +1,16 @@
+def non_repeating(s):
+    res = ''
+    for i in s:
+        count = 0
+        for j in s:
+            if i == j:
+                count += 1
+        if count == 1:
+            res = res + i
+    if res:        
+        print(res[0])
+    else:
+        print(-1)
+        
+s = input("Non repeating characters\nEnter the string:")
+print(non_repeating(s))
