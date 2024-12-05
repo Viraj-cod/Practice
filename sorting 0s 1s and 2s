@@ -1,0 +1,43 @@
+def srt(ar):
+    res=ar.copy()
+    for i in ar:
+        count = 0
+        for j in ar:
+            if i > j:
+                count = count + 1
+        res[count] = i
+    return res
+
+def count(lst):
+    res=[]
+    num = []
+    for i in lst:
+        if i not in res:
+            res.append(i)
+    #print(res)
+    sort_lst = srt(res)
+    for i in sort_lst:
+        count = 0
+        for j in lst:
+            if i == j:
+                count = count+1
+        num.append(count)
+    #print(num)
+    return num
+
+def sort(arr):
+    res = count(arr)
+    temp = []
+    for i in range(len(res)):
+        for j in range(res[i]):
+            temp.append(i)
+    return temp
+            
+def main():
+    arr = list(map(int,input("Enter the elements of the array:").split()))
+    print(sort(arr))
+    #print(srt(arr))
+    #print(count(arr))
+
+if __name__ == '__main__':
+    main()
