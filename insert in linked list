@@ -1,0 +1,55 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next = None
+    
+class Linked_list:
+    def __init__(self):
+        self.head = None
+        
+    def insert(self,val):
+        new = Node(val)
+        if self.head is None:
+            self.head = new
+            return
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+        temp.next = new
+    
+    def display(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.data,end='->')
+            temp = temp.next
+        print('null')
+
+    def insert_sorted(self,data):
+        new = Node(data)
+        fast = self.head.next
+        slow = self.head
+        if new.data < self.head.data:
+            new.next = self.head
+            self.head = new
+            return
+        while slow is not None:
+            if new.data < fast.data:
+                slow.next = new
+                new.next = fast
+                fast = None
+                break
+            slow = slow.next
+            fast = fast.next
+            
+def main():
+    ll = list(map(int,input("Enter the elements to add in linked list:").split()))
+    ele = int(input('Enter the element to insert:'))
+    linked = Linked_list()
+    for i in ll:
+        linked.insert(i)
+    linked.display()
+    linked.insert_sorted(ele)
+    linked.display()
+    
+if __name__ == '__main__':
+    main()
