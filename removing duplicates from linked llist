@@ -1,0 +1,49 @@
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+    
+class Linked_list:
+    def __init__(self):
+        self.head = None
+        
+    def insert(self,val):
+        new= Node(val)
+        if self.head is None:
+            self.head = new
+            return
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+        temp.next = new
+        
+    def display(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.data,end = '->')
+            temp = temp.next
+        print('null')
+    
+    def dupli_sort(self):
+        slow = self.head
+        fast = self.head.next
+        while fast is not None:
+            if slow.data == fast.data:
+                slow.next = fast.next
+                fast = slow.next
+            else:
+                slow = slow.next
+                if fast:
+                    fast = fast.next
+        self.display()
+            
+def main():
+    ele = list(map(int,input("Enter the elements of the linked list:").split()))
+    ll = Linked_list()
+    for i in ele:
+        ll.insert(i)
+    ll.display()
+    ll.dupli_sort()
+    
+if __name__ == '__main__':
+    main()
