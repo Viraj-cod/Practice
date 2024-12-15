@@ -1,0 +1,15 @@
+def kadanes(arr):
+    res = []
+    for i in range(len(arr)):
+        for j in range(len(arr)+1):
+                temp = sum(arr[i:j])
+                if temp != 0:
+                    res.append(temp)
+    return max(res)    
+
+def main():
+    ele = list(map(int,input("Enter array elements:").split()))
+    print(kadanes(ele))
+
+if __name__ == '__main__':
+    main()
