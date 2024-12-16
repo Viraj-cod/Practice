@@ -1,0 +1,33 @@
+class K_th:
+    def __init__(self,arr1,arr2,k):
+        self.arr1 = arr1
+        self.arr2 = arr2
+        self.k = k - 1
+    
+    def _sort(self):
+        comb = self.arr1 + self.arr2
+        temp = comb.copy()
+        for i in comb:
+            count = 0
+            for j in comb:
+                if i > j:
+                    count += 1
+            temp[count] = i
+        return temp
+        
+    def cal(self):
+        #print(self._sort())
+        res = self._sort()
+        for i in range(len(res)):
+            if i == self.k:
+                return res[i]
+                
+def main():
+    a1 = list(map(int,input("Enter elements of first array:").split()))
+    a2 = list(map(int,input("Enter elements of second array:").split()))
+    k = int(input('Enter the Kth element of the array:'))
+    obj = K_th(a1,a2,k)
+    print(obj.cal())
+
+if __name__ == '__main__':
+    main()
