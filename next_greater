@@ -1,0 +1,20 @@
+def next_greater(arr):
+    temp = []
+    for i in range(len(arr)-1):
+        add = -1
+        for j in arr[i+1:]:
+            if j > arr[i]:
+                add = 0
+                temp.append(j)
+                break
+        if add == -1:
+            temp.append(-1)
+    temp.append(-1)
+    return temp
+    
+def main():
+    inp = list(map(int,input("Enter the array elements:").split()))
+    print(next_greater(inp))
+
+if __name__ == '__main__':
+    main()
