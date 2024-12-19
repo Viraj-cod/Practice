@@ -1,0 +1,10 @@
+ar = [6,3,4,2,8,4,2]
+one = 0
+two = -1
+for i in ar:
+    if i > one:
+        two = one
+        one = i
+        
+print(one)
+print(two)
