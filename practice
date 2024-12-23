@@ -1,0 +1,17 @@
+def next_gre(arr):
+    res = []
+    for i in range(len(arr)):
+        if i < len(arr)-1:
+            for j in arr[i+1:]:
+                mx = max(arr[i+1:])
+                if j > arr[i]:
+                    res.append(j)
+                    break
+                elif mx < arr[i]:
+                    res.append(-1)
+                    break
+    res.append(-1)
+    return res
+    
+lst = list(map(int,input("Enter the array elements:").split()))
+print(next_gre(lst))
