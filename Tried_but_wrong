@@ -1,0 +1,24 @@
+def res(arr,temp):
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            if arr[i][j] == 0:
+                print(arr[i][j])
+                for k in range(len(arr[i])):
+                    temp[i][k] = 0
+                for m in range(len(arr)):
+                    temp[m][j] = 0
+    return temp
+                
+def main():
+    n = int(input("Enter the number of rows:"))
+    mat = []
+    print('Enter the elements of each row')
+    for i in range(n):
+        temp = list(map(int,input().split()))
+        mat.append(temp)
+    ele = mat.copy()
+    print(res(mat,ele))
+    
+if __name__ == '__main__':
+    main()
+    main()
