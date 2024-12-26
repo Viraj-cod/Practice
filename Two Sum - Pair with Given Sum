@@ -1,0 +1,14 @@
+def Two_sum(arr,c):
+    for i in arr:
+        for j in arr:
+            if i + j == c:
+                return True
+    return False
+
+def main():
+    ele = list(map(int,input("Enter the array eleements:").split()))
+    n = int(input("Enter the target elements:"))
+    print(Two_sum(ele,n))
+
+if __name__ == '__main__':
+    main()
