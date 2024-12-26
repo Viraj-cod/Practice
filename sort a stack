@@ -1,0 +1,72 @@
+def sort(arr):
+    temp = arr.copy()
+    ele = []
+    for i in arr:
+        if i in ele:
+            count = 1
+        else:
+            count = 0
+        for j in arr:
+            if i > j:
+                count += 1
+        temp[count] = i
+        ele.append(i)
+    return temp
+
+class stack:
+    def __init__(self,size):
+        self.arr = [None]*size
+        self.size = size
+        self.top = - 1
+    
+    def push(self,val):
+        if self.top < self.size-1:
+            if self.top == 0:
+                self.top = self.top + 1
+                self.arr[self.top] = val
+                return
+            else:
+                self.top = self.top + 1
+                self.arr[self.top] = val
+                
+        else:
+            print ('Stack is full')
+            
+    def pop(self):
+        if self.top == -1:
+            print('stack is empty')
+        else:
+            self.arr[self.top] = None
+            self.top = self.top - 1
+            
+    def display(self):
+        return self.arr
+    
+    def sort(self):
+        temp = sort(self.arr)
+        return temp
+        
+
+def main():
+    sz = int(input('Enter the size of the stack:'))
+    print('1.Push\n2.Pop\n3.Display\n4.sorted\n5.exit')
+    st = stack(sz)
+    while True:
+        inp = int(input('Enter the options:'))
+        if inp == 1:
+            ele = int(input("Enter the element to push:"))
+            st.push(ele)
+        elif inp == 2:
+            st.pop()
+        elif inp == 3:
+            print(*st.display())
+        elif inp == 4:
+            print(*st.sort())
+        elif inp == 5:
+            break
+        
+if __name__ == '__main__':
+    main()
+        
+            
+            
