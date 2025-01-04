@@ -1,0 +1,30 @@
+class Rev:
+    def task(self,s):
+        start = 0
+        end = 0
+        temp = ''
+        for i in range(len(s)):
+            if s[i] == ' ' and i != 0:
+                end = i
+                ele = s[start:end]
+                temp = temp + ele[::-1]
+                start = end
+            elif ' ' not in s:
+                ele = s[::-1]
+                temp = temp + ele
+                break
+        return temp
+
+def main():
+    try:
+        inp = input("Enter the string:")
+        res = Rev()
+        print(res.task(inp))
+    except:
+        print('Please Enter Correct Input')
+        main()
+
+if __name__ == '__main__':
+    main()
+        
+    
