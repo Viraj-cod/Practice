@@ -1,0 +1,12 @@
+def check_pal(num):
+    ori = num
+    reverse = 0
+    
+    while num > 0:
+        lst = num % 10
+        reverse = reverse * 10 + lst
+        num = int(num / 10)
+    return reverse
+
+j = int(input('Enter number:'))
+print(check_pal(j))
