@@ -1,0 +1,18 @@
+def count_occ(txt,pat):
+    res = []
+    ln = len(pat)
+    for i in range(len(txt)):
+        if i != len(txt)+1 - len(pat):
+            temp = txt[i:ln]
+            if sorted(temp) == sorted(pat):
+                res.append(txt[i:ln])
+            ln += 1
+    return len(res)
+            
+def main():
+    txt = input("Enter the text:")
+    pat = input("Enter the pattern:")
+    print(count_occ(txt,pat))
+
+if __name__ == '__main__':
+    main()
