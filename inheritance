@@ -1,0 +1,70 @@
+#single inheritance
+class par:
+    def speack(self):
+        print('parents speack')
+    
+class child(par):
+    def just(self):
+        pass
+    
+obj = child()
+obj.speack()
+
+#multiple inheritance
+
+class mother:
+    def voice(self):
+        print('Mothers voice')
+
+class father:
+    def shouts(self):
+        print('dad shouts')
+
+class child(mother,father):
+    pass
+
+obj = child()
+obj.shouts()
+obj.voice()
+
+
+#multilevel inheritance
+
+class one:
+    def first(self):
+        print('in one')
+
+class two(one):
+    def second(self):
+        print('in two')
+
+class three(two):
+    def third(self):
+        pass
+
+obj = three()
+obj.first()
+obj.second()
+
+
+
+#heirachichal inheritance
+
+class animal:
+    def sound(self):
+        print('Animal sound')
+
+class dog(animal):
+    def bark(self):
+        print('dog is barking')
+
+class cat(animal):
+    def meow(self):
+        print('cat is making sound')
+
+obj = dog()
+ob2 = cat()
+
+obj.sound()
+ob2.sound()
+        
