@@ -1,0 +1,29 @@
+def add(arr):
+    ad = 0
+    for i in arr:
+        ad += i
+    return ad
+
+def ln(arr):
+    temp = 0
+    for i in arr:
+        temp += 1
+    return temp
+    
+def large_0(arr):
+    res = []
+    for i in range(len(arr)):
+        for j in range(i,len(arr)+1):
+            if add(arr[i:j]) == 0 and arr[i:j] != []:
+                temp = ln(arr[i:j])
+                res.append(temp)
+    if res:
+        return max(res)
+    return 0
+    
+def main():
+    arr = list(map(int,input("Enter the array elements:").split()))
+    print(large_0(arr))
+
+if __name__ == '__main__':
+    main()
