@@ -1,0 +1,24 @@
+def mx(arr):
+    temp = 0
+    for i in arr:
+        if i > temp:
+            temp = i
+    return temp
+    
+class ind:
+    def cal(self,arr):
+        out = []
+        for i in range(len(arr)):
+            for j in range(len(arr)):
+                if arr[i] <= arr[j] and i <= j:
+                    temp = j - i
+                    out.append(temp)
+        return mx(out)
+
+def main():
+    arr = list(map(int,input("Enter the elements:").split()))
+    res = ind()
+    print(res.cal(arr))
+
+if __name__ == '__main__':
+    main()
