@@ -1,0 +1,37 @@
+class node:
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+class Tree:
+    def __init__(self,val):
+        self.root = node(val)
+    
+    def insert_left(self,root,val):
+        if root.left is None:
+            root.left = node(val)
+            return
+    
+    def insert_right(self,root,val):
+        if root.right is None:
+            root.right = node(val)
+            return
+    
+    def display(self,root,level=0):
+        if root is not None:
+            self.display(root.right,level + 1)
+            print(' '*4*level+'->',root.data)
+            self.display(root.left,level+1)
+        
+def main():
+    tree = Tree(1)
+    tree.insert_left(tree.root,2)
+    tree.insert_right(tree.root,4)
+    tree.insert_left(tree.root.right,1)
+    tree.insert_right(tree.root.right,6)
+    tree.insert_left(tree.root.left,1)
+    tree.insert_right(tree.root.left,6)
+    tree.display(tree.root)
+
+if __name__ == '__main__':
+    main()
