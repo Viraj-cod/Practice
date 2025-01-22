@@ -1,0 +1,38 @@
+def ln(arr):
+    temp = []
+    for k in arr:
+        num = -1
+        while k != 0:
+            k = int(k)/10
+            num += 1
+        temp.append(num)
+    return temp,max(temp)
+    
+def sol(arr):
+    res = ''
+    longs,mx = ln(arr)
+    new = []
+    pk = []
+    jj = {}
+    for i in range(len(arr)):
+        mul = arr[i]*(10**(mx-longs[i]))
+        jj[arr[i]] = mul
+        new.append(mul)
+    mm = len(jj)
+    for i in new:
+        if i not in pk:
+            pk.append(i)
+    mk = sorted(pk)
+    oo = mk[::-1]
+    for i in oo:
+        for o,p in jj.items():
+            if i == p:
+                res = res + str(o)
+    return res
+        
+def main():
+    arr = list(map(int,input("Enter he array elememts:").split()))
+    print(sol(arr))
+
+if __name__ == '__main__':
+    main()
