@@ -1,0 +1,19 @@
+def add(lst):
+    res = lst[0]
+    for i in lst[1:]:
+        res += i
+    return res
+
+def kan(arr):
+    temp = arr[0]
+    for i in range(len(arr)):
+        if add(arr[i:]) > temp:
+            temp = add(arr[i:])
+    return temp
+    
+def main():
+    lst = list(map(int,input("Enter the array elements:").split()))
+    print(kan(lst))
+
+if __name__ == '__main__':
+    main()
