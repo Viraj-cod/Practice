@@ -1,0 +1,19 @@
+def maj(arr):
+    res = 0
+    temp2 = 0
+    for i in arr:
+        temp = 0
+        for j in arr:
+            if i == j:
+                temp += 1
+        if temp > temp2:
+            temp2 = temp
+            res = i
+    return res
+        
+def main():
+    ele = list(map(int,input().split()))
+    print(maj(ele))
+
+if __name__ == '__main__':
+    main()
