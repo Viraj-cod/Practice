@@ -1,0 +1,14 @@
+def pal(num):
+    ori = num
+    rev= 0
+    while num > 0:
+        dig = num % 10
+        rev = rev * 10 + dig
+        num = num // 10
+    return rev
+    
+def main():
+    k = int(input("enter the number:"))
+    print(pal(k))
+if __name__ == '__main__':
+    main()
