@@ -1,0 +1,20 @@
+def happy(n):
+    if n % 2 == 0:
+        return False
+    while True:
+        ot = 0
+        while n != 0:
+            k = n % 10
+            ot = ot + k**2
+            n = n // 10
+        if ot == 1:
+            return True
+        else:
+            n = ot
+            
+def main():
+    num = int(input("enter the number:"))
+    print(happy(num))
+
+if __name__ == '__main__':
+    main()
