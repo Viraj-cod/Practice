@@ -1,0 +1,44 @@
+def rev(char):
+    i = -1
+    res = ''
+    fres = ''
+    start = 0
+    end = 0
+    temp =True
+    while i >= 0 - len(char):
+        if i == 0 - len(char) and char[i] != ' ' and temp == False:
+            print('hello')
+            res = res + char[start:end] + ' '
+        elif char[i] == ' ' and temp == True:
+            i -= 1
+            continue
+        elif char[i] != ' ' and temp == True:
+            if i == -1:
+                end = i 
+            else:
+                end = i + 1
+            temp = False
+        elif i != 0 - len(char) and temp == False:
+            if char[i-1] == ' ':
+                start = i
+                temp = True
+                if end == -1:
+                    res = res + char[start:] + ' ' 
+                else:
+                    res = res + char[start:end] + ' ' 
+        print(start,end)
+        i -= 1
+    for i in range(len(res)):
+        if i == len(res) - 1:
+            continue
+        else:
+            fres = fres + res[i]
+        
+    return fres,len(fres)
+
+def main():
+    ele = input("Enter the character:")
+    print(rev(ele))
+
+if __name__ == '__main__':
+    main()
