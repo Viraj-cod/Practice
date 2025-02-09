@@ -1,0 +1,43 @@
+class node:
+    def __init__(self,val):
+        self.val = val
+        self.left = None
+        self.right = None
+class bst:
+    def __init__(self):
+        self.root = None
+    
+    def insert(self,val):
+        if self.root is None:
+            self.root = node(val)
+            return
+        else:
+             self._inser_recursively(self.root,val)
+    
+    def _inser_recursively(self,root,val):
+        if val < root.val:
+            if root.left is None:
+                root.left = node(val)
+            else:
+                self._inser_recursively(root.left,val)
+        else:
+            if root.right is None:
+                root.right= node(val)
+            else:
+                self._inser_recursively(root.right,val)
+    
+    def display(self,root,level=0):
+        if root:
+            self.display(root.right,level+1)
+            print(' '*4*level+'->',root.val)
+            self.display(root.left,level+1)
+
+bstre = bst()
+bstre.insert(50)
+bstre.insert(30)
+bstre.insert(20)
+bstre.insert(40)
+bstre.insert(70)
+bstre.insert(60)
+bstre.insert(80)
+bstre.display(bstre.root)
