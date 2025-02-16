@@ -1,0 +1,34 @@
+def srt(arr):
+    temp = arr.copy()
+    lp = []
+    for i in arr:
+        count = 0
+        if i in lp:
+            count = 1
+        for j in arr:
+            if i > j:
+                count += 1
+        temp[count] = i
+        lp.append(i)
+    return temp
+
+class solution:
+    def threeSum(self,num):
+        res= []
+        for i in range(len(num)):
+            for j in range(len(num)):
+                    for k in range(len(num)):
+                         if i != j and i != k and j != k:
+                            if num[i] + num[j] + num[k] == 0:
+                                if srt([num[i],num[j],num[k]]) not in res:
+                                    res.append(srt([num[i],num[j],num[k]]))
+        return res
+        
+def main():
+    lst = list(map(int,input("Enter the elements:").split()))
+    obj = solution()
+    print(obj.threeSum(lst))
+    print(srt(lst))
+
+if __name__ == '__main__':
+    main()
