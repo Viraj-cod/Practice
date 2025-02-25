@@ -1,0 +1,9 @@
+#k
+
+k = 3
+while k > 0:
+    print('k'+' '*k+'k')
+    k -= 1
+while k != 3:
+    print('k'+' '*k+'k')
+    k+=1
