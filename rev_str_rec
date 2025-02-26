@@ -1,0 +1,10 @@
+def revstr(word,temp=None):
+    if temp == None:
+        temp =''
+    if not word:
+        return temp
+    else:
+        temp += word[-1]
+    return revstr(word[:-1],temp)
+
+print(revstr('viraj'))
