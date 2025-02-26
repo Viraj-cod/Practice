@@ -1,0 +1,13 @@
+def mxrec(lst,m=0):
+    if m == 0:
+        m = 0 
+    if len(lst) == 0:
+        return m
+    
+    if lst[-1] > m:
+        m = lst[-1]
+    lst.pop()
+    
+    return mxrec(lst,m)
+
+print(mxrec([6,3,8,9,2,13]))
