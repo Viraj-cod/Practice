@@ -1,0 +1,12 @@
+def revrec(lst,rev = 0):
+    if rev == 0:
+        rev = []
+    
+    if len(lst) == 0:
+        return rev
+    
+    rev.append(lst[-1])
+    lst.pop()
+    return revrec(lst,rev)
+
+print(revrec([6,4,3,2,1]))
