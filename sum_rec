@@ -1,0 +1,10 @@
+def sumrec(num,dig=0):
+    if dig == 0:
+        dig =0
+    if num == 0:
+        return dig
+    
+    dig += num
+    return sumrec(num-1,dig)
+
+print(sumrec(223))
