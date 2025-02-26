@@ -1,0 +1,14 @@
+def countocc(lst,num,occ=0,bs=0):
+    if occ == 0 and bs ==0:
+        occ = 0
+        bs=0
+    if bs == len(lst):
+        return occ
+    
+    if lst[bs] == num:
+        occ += 1
+    bs += 1
+    return countocc(lst,num,occ,bs)
+
+print(countocc([4,3,8,3,9,3,2,9,3],9))
+    
