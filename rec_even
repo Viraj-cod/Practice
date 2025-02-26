@@ -1,0 +1,12 @@
+def receven(num,lst=None):
+    if lst is None:
+        lst = []
+    
+    if num == 0:
+        return lst[::-1]
+        
+    if num % 2 == 0:
+        lst.append(num)
+    return receven(num-1,lst)
+
+print(receven(8))
