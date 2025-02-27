@@ -1,0 +1,13 @@
+#move zero to end 
+arr =[4,0,2,1,0,5]
+#arr = list(map(int,input("enter the numbers:").split()))
+st=1
+en=0
+while st < len(arr):
+    if arr[en] == 0 and arr[st]!=0:
+        arr[en] = arr[st]
+        arr[st] = 0
+    if arr[en] != 0:
+        en+=1
+    st += 1
+print(arr)
