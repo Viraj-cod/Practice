@@ -1,0 +1,17 @@
+def rec_feb(n,a=None,b=None):
+    if n == 2:
+        return 
+    if a is None and b is None:
+        a = 0
+        print(a,end=' ') #0,1,1,2,3
+        b = 1
+        print(b,end=' ')
+    print(a+b,end=' ')
+    return rec_feb(n-1,a=b,b=a+b)
+
+def main():
+    num = int(input("Enter the number:"))
+    rec_feb(num)
+
+if __name__ == '__main__':
+    main()
