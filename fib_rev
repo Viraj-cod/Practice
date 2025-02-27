@@ -1,0 +1,20 @@
+def feb(num):
+    a = 0
+    b = 1
+    add = 0
+    print(a,end=' ')
+    print(b,end=' ')
+    for i in range(2,num):
+        add = a + b
+        print(add,end=' ')
+        a = b
+        b= add
+    print('')
+    return add
+    
+def main():
+    num = int(input("Enter the number:"))
+    print(feb(num))
+
+if __name__ == '__main__':
+    main()
