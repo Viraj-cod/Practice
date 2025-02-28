@@ -1,0 +1,33 @@
+#binary to decimal
+class Solution:
+    def to_bin(self,num):
+        b = self.dig(num)
+        i = 0
+        res = 0
+        while i < b:
+            temp = num % 10
+            res = res + temp*(2**i)
+            num = num//10
+            i += 1
+        return res
+    def dig(self,n):
+        count = 0
+        while n > 0:
+            n = n//10
+            count += 1
+        return count
+        
+def main():
+    n = int(input("Enter the number:"))
+    obj = Solution()
+    print(obj.to_bin(n))
+
+if __name__ == '__main__':
+    main()
+
+#or
+'''
+k = '110101'
+l = int(k,2)
+print(l)
+'''
