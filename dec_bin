@@ -1,0 +1,23 @@
+#decimal to binary
+class solution:
+    def dec_bin(self,num):
+        res = ''
+        while num > 0:
+            temp = num % 2
+            res = str(temp) + res
+            num = num //2
+        return res
+
+def main():
+    n = int(input("Enter the number:"))
+    obj = solution()
+    print(obj.dec_bin(n))
+
+if __name__ == '__main__':
+    main()
+#or
+'''
+k = 543
+l = bin(k)
+print(l)
+'''    
