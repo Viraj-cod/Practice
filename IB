@@ -1,0 +1,24 @@
+def IB(num,rept):
+    temp = 0
+    res = 0
+    for i in range(rept):
+        t = num
+        temp2 = 0
+        while t>0:
+            n = t % 10
+            temp2 += n
+            t = t // 10
+        temp += temp2
+    while temp > 0:
+        k = temp % 10
+        res += k
+        temp = temp // 10
+    return res
+
+def main():
+    n = int(input("enter the value of N:"))
+    r = int(input("enter the value of R:"))
+    print(IB(n,r))
+
+if __name__ == '__main__':
+    main()
