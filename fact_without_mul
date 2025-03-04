@@ -1,0 +1,11 @@
+def fact(num):
+    temp=num
+    k = num
+    for i in range(num,2,-1):
+        for j in range(i-2):
+            temp = temp + k
+        k = temp
+    return temp
+
+n = int(input("Enter the number:"))
+print(fact(n))
