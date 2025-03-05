@@ -1,0 +1,16 @@
+def good(num):
+    ori = num
+    temp = 0
+    while num>0:
+        j = num % 10
+        temp = temp + j
+        num = num // 10
+    if ori % temp == 0:
+        return 'Good Number'
+    else:
+        return 'Bad Number'
+    
+n = int(input("Enter Testcases:"))
+for i in range(n):
+    k = int(input())
+    print(good(k))
