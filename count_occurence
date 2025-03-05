@@ -1,0 +1,14 @@
+def cnt(w1,w2):
+    count = 0
+    k = ''
+    for i in w2:
+        for j in w1:
+            if i == j and i not in k:
+                count += 1
+        k = k + i
+    return count
+num = int(input("Enter:"))
+for i in range(num):
+    ele1 = input("Enter the first word:")
+    ele2  = input("Enter the second world:")
+    print(cnt(ele1,ele2))
