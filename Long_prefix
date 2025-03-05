@@ -1,0 +1,31 @@
+def ln(arr):
+    p = len(arr[0])
+    for i in arr:
+        if len(i) < p:
+            p = len(i)
+    return p
+
+def long_prefix(arr):
+    end = 0
+    if arr[0][0] != arr[1][0]:
+        return -1
+    for _ in range(ln(arr)):
+        count = 0
+        temp = arr[0][:end]
+        for j in range(len(arr)):
+            if arr[j][:end] == temp:
+                count += 1
+        if count != len(arr):
+            return arr[0][:end-1]
+        end += 1
+    
+
+def main():
+    n = int(input("Enter the number:"))
+    for i in range(n):
+        ln = int(input())
+        dt = input()
+        print(long_prefix(dt.split()))
+
+if __name__ == '__main__':
+    main()
