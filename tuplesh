@@ -1,0 +1,9 @@
+k = []
+for i in range(2):
+    t = eval(input("Enter:"))
+    k.append(t)
+l = tuple(k)
+if type(l[0]) == type(l[1]):
+    print("Same data type!")
+else:
+    print("different data type!")
