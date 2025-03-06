@@ -1,0 +1,15 @@
+class solution:
+    def conv(self,inp):
+        if "A"<=inp<="Z":
+            inp = chr(ord(inp)+32)
+            return inp
+        elif "a"<=inp<="z":
+            inp = chr(ord(inp)-32)
+            return inp
+def main():
+    ele = input("Enter the character:")
+    obj = solution()
+    print(obj.conv(ele))
+
+if __name__ == '__main__':
+    main()
