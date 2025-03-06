@@ -1,0 +1,23 @@
+class solution:
+    def cal(self,inp):
+        star = 0
+        ast = 0
+        for i in inp:
+            if i == '*':
+                star+=1
+            elif i == "#":
+                ast += 1
+        if star == ast:
+            return 0
+        elif ast > star:
+            return -ast
+        else:
+            return star
+
+def main():
+    k = input("Enter the input:")
+    obj = solution()
+    print(obj.cal(k))
+
+if __name__ == '__main__':
+    main()
