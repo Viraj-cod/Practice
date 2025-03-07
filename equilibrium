@@ -1,0 +1,24 @@
+def add(arr):
+    temp = 0
+    for i in arr:
+        temp += i
+    return temp
+    
+def solution(arr):
+    for i in range(len(arr)):
+        if i == 0:
+            if 0 == add(arr[1:]):
+                return i
+        elif i == len(arr) - 1:
+            if add(arr[:i]) == 0:
+                return i
+        elif add(arr[:i]) == add(arr[i+1:]):
+            return i
+    return -1
+
+def main():
+    lst = list(map(int,input("Enter the numbers:").split()))
+    print(solution(lst))
+
+if __name__ == '__main__':
+    main()
