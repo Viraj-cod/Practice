@@ -1,0 +1,19 @@
+class solution:
+    def res(self,num):
+        temp = []
+        i = 0
+        while num > 0:
+            lst = num % 10
+            temp.append(lst*(10**i))
+            num = num // 10
+            i += 1
+        return temp
+
+def main():
+    inp = int(input("Enter the number:"))
+    obj = solution()
+    print(obj.res(inp))
+
+if __name__ == '__main__':
+    main()
+    
