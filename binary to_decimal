@@ -1,0 +1,20 @@
+#binary to decimal
+
+class solution:
+    def res(self,num):
+        k = 0
+        i = 0
+        while num > 0:
+            lst = num % 10
+            k = k + (lst*(2**i))
+            num = num // 10
+            i += 1
+        return k
+
+def main():
+    inp = int(input("Enter the decimal number:"))
+    obj = solution()
+    print(obj.res(inp))
+
+if __name__ == '__main__':
+    main()
