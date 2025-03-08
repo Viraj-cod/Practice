@@ -1,0 +1,22 @@
+class solution:
+    def pal(self,rg):
+        temp = []
+        for i in range(rg):
+            if i > 9:
+                ori = i
+                temp2 = 0
+                while i > 0:
+                    lst = i % 10
+                    temp2 = temp2 * 10 + lst
+                    i = i // 10
+                if temp2 == ori:
+                    temp.append(temp2)
+        return temp
+
+def main():
+    inp = int(input("Enter the range:"))
+    obj = solution()
+    print(obj.pal(inp))
+
+if __name__ == '__main__':
+    main()
