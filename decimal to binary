@@ -1,0 +1,23 @@
+#decimal to binary
+#print(bin(4)[2:])
+class solution:
+    def res(self,num):
+        if num == 0:
+            return 0
+        binary = 0
+        i = 0
+        while num > 0:
+            lst = num % 2
+            binary = binary + (lst*(10**i))
+            num = num // 2
+            i+=1
+        return binary
+    
+def main():
+    inp=int(input("enter the decimal number:"))
+    obj = solution()
+    print(obj.res(inp))
+
+if __name__ == '__main__':
+    main()
+        
