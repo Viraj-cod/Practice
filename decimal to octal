@@ -1,0 +1,13 @@
+#decimal to octal
+def dec_oct(num):
+    temp = 0
+    i = 0
+    while num>0:
+        lst = num % 8
+        temp = temp + (lst*(10**i))
+        num = num // 8
+        i += 1
+    return temp
+
+inp = int(input("Enter the number:"))
+print(dec_oct(inp))
