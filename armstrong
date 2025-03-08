@@ -1,0 +1,21 @@
+class solution:
+    def armstrong(self,num):
+        temp = []
+        ori = num
+        res = 0
+        while num>0:
+            k = num % 10
+            temp.append(k)
+            num = num // 10
+        for i in temp:
+            res = res + i ** len(temp)
+        return res == ori
+
+def main():
+    inp = int(input("enter the number:"))
+    obj = solution()
+    print(obj.armstrong(inp))
+
+if __name__ == '__main__':
+    main()
+        
