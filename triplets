@@ -1,0 +1,25 @@
+def fil(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)-1):
+            if arr[j] > arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+    return arr
+class solution:
+    def threesum(self,nums):
+        temp = []
+        for i in range(len(nums)):#[-1,0,1,2,-1,-4]
+            for j in range(len(nums)):
+                for k in range(len(nums)):
+                    if i!=j and j!=k and i!=k and nums[i]+nums[j]+nums[k] == 0:
+                        k = fil([nums[i],nums[j],nums[k]])
+                        if k not in temp:
+                            temp.append(k)
+        return temp
+
+def main():
+    ele = list(map(int,input("Enter the elements:").split()))
+    obj = solution()
+    print(obj.threesum(ele))
+
+if __name__ == '__main__':
+    main()
