@@ -1,0 +1,23 @@
+def fct(num):
+    k = []
+    for i in range(1,num):
+        if num % i == 0:
+            k.insert(0,i)
+    return k
+
+def hcf(arr,fcts=None,d=0):
+    if fcts is None:
+        fcts = fct(min(arr))
+    c = 0
+    for i in arr:
+        if i % fcts[d] == 0:
+            c += 1
+    if c == len(arr):
+        return fcts[d]
+    return hcf(arr,fcts,d+1)
+    
+def main():
+    inp = list(map(int,input("Enter the numbers:").split()))
+    print(hcf(inp))
+if __name__ == '__main__':
+    main()
