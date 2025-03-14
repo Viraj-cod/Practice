@@ -1,0 +1,52 @@
+class stack:
+    def __init__(self,size):
+        self.st = [None]*size
+        self.peek = -1
+    
+    def push(self,val):
+        if self.peek < len(self.st)-1:
+            self.peek += 1
+            self.st[self.peek] = val
+        else:
+            print('stack is full!')
+    
+    def pop(self):
+        if self.peek == -1:
+            print('Stack is empty!')
+        else:
+            self.st[self.peek] = None
+            self.peek -= 1
+    
+    def display(self):
+        print(self.st)
+    
+    def top(self):
+        print(self.st[self.peek])
+    
+    def size(self):
+        print(self.size)
+    
+    def Isempty(self):
+        if self.peek == -1:
+            return True
+        else:
+            return False
+
+Stack = stack(5)
+Stack.push(8)
+Stack.push(3)
+Stack.push(2)
+Stack.push(4)
+Stack.push(9)
+Stack.pop()
+Stack.push(0)
+Stack.push(8)
+Stack.display()
+Stack.pop()
+Stack.pop()
+Stack.pop()
+Stack.pop()
+
+Stack.display()
+
+print(Stack.Isempty())
