@@ -1,0 +1,78 @@
+class node:
+    def __init__(self,data):
+        self.data = data
+        self.prev = None
+        self.next = None
+    
+class dbll:
+    def __init__(self):
+        self.head = None
+    
+    def insert(self,val):
+        new = node(val)
+        if self.head is None:
+            self.head = new
+            return
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+        temp.next = new
+        new.prev = temp
+    
+    def remove_front(self):
+        if self.head is None:
+            return None
+        self.head = self.head.next
+        self.prev = None
+        self.display()
+    
+    def remove_end(self):
+        if self.head is None:
+            return None
+        slow = self.head
+        while slow.next is not None:
+            slow = slow.next
+        slow.prev.next = None
+        self.display()
+    
+    def ad_between(self,dest,val):
+        new = node(val)
+        temp = self.head
+        while temp.data != dest:
+            temp = temp.next
+        new.next = temp.next
+        temp.next = new
+        new.prev = temp
+    def rem_between(self,dest):
+        if self.head is None:
+            return None
+        temp = self.head
+        while temp.data != dest:
+            temp = temp.next
+        temp.prev.next = temp.next
+        self.display()
+    
+    def display(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.data,end='->')
+            temp = temp.next
+        print('None')
+try:
+    dll = dbll()
+    dll.insert(8)
+    dll.insert(4)
+    dll.insert(3)
+    dll.insert(6)
+    dll.insert(5)
+    dll.display()
+    dll.remove_end()
+    dll.remove_front()
+    dll.ad_between(3,1)
+    dll.display()
+    dll.rem_between(1)
+except:
+    print('error')
+
+        
+        
