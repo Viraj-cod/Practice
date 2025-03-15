@@ -1,0 +1,55 @@
+#static queue
+class queue:
+    def __init__(self,size):
+        self.arr = [None] * size
+        self.front = -1
+        self.rear = -1
+    
+    def enque(self,val):
+        if self.rear == len(self.arr) - 1:
+            print('queue is full!')
+        else:
+            self.rear += 1
+            self.arr[self.rear] = val
+    
+    def deque(self):
+        if self.front == self.rear:
+            print('No elemenet to remove!')
+            self.front = -1
+            self.rear = -1
+        else:
+            self.front += 1
+            self.arr[self.front] = None
+            
+    def isempty(self):
+        return self.front == self.rear
+    
+    def isfull(self):
+        return self.rear == len(self.arr) - 1
+    
+    def size(self):
+        return len(self.arr)
+    
+    def dis(self):
+        return self.arr
+
+Q= queue(5)
+Q.enque(1)
+Q.enque(2)
+Q.enque(3)
+Q.enque(4)
+Q.enque(6)
+print(Q.dis())
+Q.deque()
+Q.deque()
+Q.deque()
+Q.deque()
+Q.deque()
+Q.deque()
+
+
+Q.enque(6)
+
+print(Q.dis())
+
+
