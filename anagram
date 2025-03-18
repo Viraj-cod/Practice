@@ -1,0 +1,10 @@
+def ana(word):
+    k=0
+    for i in word:
+        k+=ord(i)
+    return k
+    
+j = input("Enter the Word:")
+m = input("Enter the Anagram:")
+if ana(j)==ana(m):print(f'Yes {m} is anagram of {j}') 
+else: print(f'No {m} is not anagram of {j}')
