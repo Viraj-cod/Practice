@@ -1,0 +1,8 @@
+j=input('Enter the string:')
+m=''
+for i in range(len(j)-1,-1,-1):
+    m+=j[i]
+if m == j:
+    print(f'Yes {j} is palindrome as {m}')
+else:
+    print(f'No {j} is not palindrome as {m}')
