@@ -1,0 +1,14 @@
+def bubly(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)-1):
+            if arr[j] > arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+    return arr
+
+def main():
+    ar = list(map(int,input("Enter the elements of the first array").split()))
+    ar2 = list(map(int,input("Enter the elements of the second array").split()))
+    print(bubly(ar+ar2))
+
+if __name__ == '__main__':
+    main()
