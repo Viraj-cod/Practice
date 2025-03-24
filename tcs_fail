@@ -1,0 +1,17 @@
+def tcs_fail(num):
+    add=0
+    for i in range(2,num):
+        count = 0
+        for j in range(2,num):
+            if i % j == 0 and i != j:
+                count += 1
+        if count == 0:
+            add += i
+    return add
+
+def main():
+    num = int(input("Enter the number:"))
+    print(f'The sum of prime numbers in range of 1 to {num} is {tcs_fail(num)}')
+
+if __name__ == '__main__':
+    main()
