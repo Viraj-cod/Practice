@@ -1,0 +1,12 @@
+#to convert decimal number into binary number
+
+def dec_bin(num):
+    res=0
+    k=0
+    while num>0:
+        lst = num % 2
+        res = res + lst *(10**k)
+        num = num//2
+        k+=1
+    return res
+print(dec_bin(67))
