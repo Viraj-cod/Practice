@@ -1,0 +1,8 @@
+inp=list(map(int,input("Enter the Elements:").split()))
+if len(inp) % 2 != 0:
+    mid=len(inp) // 2
+    inp = inp[mid+1:]+[inp[mid]]+inp[:mid]
+else:
+    mid = len(inp) // 2 
+    inp = inp[mid:]+inp[:mid]
+print(inp)
