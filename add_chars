@@ -1,0 +1,11 @@
+a='Python@1'
+b='language'
+k=0
+p=len(b)-1
+res=''
+while k<len(a):
+    res += a[k]
+    res += b[p]
+    k+=1
+    p-=1
+print(res)
