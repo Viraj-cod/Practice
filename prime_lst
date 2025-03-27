@@ -1,0 +1,17 @@
+def prime_only(lst):
+    res=[]
+    for i in lst:
+        count=0
+        for j in range(2,i+1):
+            if i != j and i % j == 0:
+                count += 1
+        if count == 0:
+            res.append(i)
+    return res
+
+def main():
+    ele = list(map(int,input("Enter the elements:").split()))
+    print(f'Prime numbers in the list are:{prime_only(ele)}')
+
+if __name__ == '__main__':
+    main()
