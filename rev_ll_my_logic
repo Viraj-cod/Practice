@@ -1,0 +1,56 @@
+class node:
+    def __init__(self,val):
+        self.val = val
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.head = None
+    
+    def insert(self,val):
+        new = node(val)
+        if self.head is None:
+            self.head = new
+            return
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+        temp.next = new
+    
+    def cnt(self):
+        temp = self.head
+        c=1
+        while temp.next is not None:
+            temp = temp.next
+            c+=1
+        return c
+    
+    def rev(self):
+        n = self.cnt()-1
+        temp=self.head
+        while temp is not None:
+            inner = n
+            temp2 = temp
+            while inner > 0:
+                temp2 = temp2.next
+                inner-=1
+            temp.val,temp2.val = temp2.val,temp.val
+            n=n-2
+            temp = temp.next
+        self.display()
+        
+    def display(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.val,end='->')
+            temp = temp.next
+        print('None')
+        
+ll = linkedlist()
+r=[1,2,3,4,5,6,7]
+for i in r:
+    ll.insert(i)
+
+print(ll.cnt())
+ll.display()
+ll.rev()
