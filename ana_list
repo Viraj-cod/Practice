@@ -1,0 +1,29 @@
+def ana(word):
+    res=0
+    for i in word:
+        res+= ord(i)
+    return res
+
+def cal(lst):
+    nums=[]
+    res=[]
+    for i in lst:
+        temp=[]
+        c=0
+        for j in lst:
+            if ana(i) == ana(j):
+                temp.append(j)
+                c+=ana(j)
+        if c not in nums:
+            nums.append(c)
+            if len(temp) > 1:
+                res.append(temp)
+    return res
+
+def main():
+    k=list(map(str,input("Enter the words in the list:").split()))
+    print(cal(k))
+
+if __name__ == '__main__':
+    main()
+    
