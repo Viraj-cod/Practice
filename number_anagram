@@ -1,0 +1,25 @@
+def is_ana(num):
+    res={}
+    ori=num
+    while num > 0:
+        i=0
+        j=ori
+        ls = num % 10
+        while j>0:
+            if ls == j%10:
+                i+=1
+            j = j // 10
+        res[ls]= i
+        num= num//10
+    return res
+
+def main():
+    n1 = int(input("Enter the first number:"))
+    n2 = int(input("Enter the second number:"))
+    if is_ana(n1)==is_ana(n2):
+        print(f'{n2} is anagram of number {n1}')
+    else:
+        print(f'{n2} is not an anagram of number {n1}')
+        
+if __name__ == '__main__':
+    main()
