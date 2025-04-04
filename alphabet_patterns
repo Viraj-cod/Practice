@@ -1,0 +1,25 @@
+n=65
+while n != 90:
+    if n % 5 == 0 and n != 65:
+        print('')
+    print(chr(n),end=' ')
+    n+=1
+print('')
+n-=1
+print('reverse')
+while n != 64:
+    if (n+1) % 5 == 0 and n != 89:
+        print('')
+    print(chr(n),end=' ')
+    n-=1
+print('')
+print('small')
+n=65
+m=122
+while n != 91:
+    if n % 5 == 0 and n != 65:
+        print('')
+    print(chr(n)+chr(m),end=' ')
+    m-=1
+    n+=1
+    
