@@ -1,0 +1,51 @@
+res={0:'',1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine',10:'ten',11:'elevan',12:'twelve',13:'thirteen',14:'fourteen',15:'fifteen',16:'sixteen',17:'seventeen',18:'eighteen',19:'Nineteen',20:'twenty',30:'Thirty',40:'Fourty',50:'Fifty',60:'Sixty',70:'Seventy',80:'eighty',90:'Ninghty',100:'hundred',1000:'Thousand'}
+def caps(st):
+    res=''
+    j=st.split()
+    for i in j:
+        if i!=' ':
+            res+= i.capitalize()+' '
+    return res
+def num_to_pro(num):
+    if 20>=num>=1:
+        return caps(res[num].capitalize())
+    elif 99>=num>=21:
+        if num not in res:
+            return caps(res[num-(num%10)].capitalize()+' '+ res[num%10])
+        return res[num]
+    elif 999 >= num >= 100:
+        if num == 100:
+            return caps('One '+res[num])
+        temp=[]
+        while num>0:
+            temp.append(num%10)
+            num=num//10
+        if temp[1]==0:
+            return caps(res[temp[-1]].capitalize()+' hundred '+res[temp[0]])
+        elif temp[1] == 1:
+            tp = temp[1]*10+temp[0]
+            return caps(res[temp[-1]].capitalize()+' hundred '+res[tp])
+        else:
+            return caps(res[temp[-1]].capitalize() +' hundred '+res[temp[1]*10] + res[temp[0]])
+    elif 9999>=num>=1000:
+        if num == 1000:
+            return caps('One '+res[num])
+        temp = []
+        while num>0:
+            temp.append(num%10)
+            num=num//10
+        if temp[1] == 1 and temp[2] == 0:
+            return caps(res[temp[-1]].capitalize() +' thounsand '+ res[temp[1]*10+temp[0]])
+        elif temp[1]==0 and temp[2]==0:
+            return caps(res[temp[-1]].capitalize() +' thounsand '+ res[temp[0]])
+        elif temp[1] == 1:
+            return caps(res[temp[-1]].capitalize() +' thounsand '+ res[temp[-2]] + ' hundred '+res[temp[1]*10+temp[0]])
+        else:
+            return caps(res[temp[-1]].capitalize() +' thounsand '+ res[temp[-2]] + ' hundred '+ res[temp[1]*10] +' '+res[temp[0]])
+        
+def main():
+    n = int(input("Enter the number:"))
+    print(num_to_pro(n))
+
+if __name__ == '__main__':
+    main()
