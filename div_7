@@ -1,0 +1,9 @@
+dk={}
+m=1
+for i in range(1,100):
+    if len(dk) == 10:
+        break
+    elif i % 7 == 0:
+        dk[m] = i
+        m+=1
+print(tuple(dk.values()))
