@@ -1,0 +1,6 @@
+j='python is easy'
+res={}
+l_j=j.split()
+for i in range(len(l_j)-1,-1,-1):
+    res[len(l_j[i])] = l_j[i]
+print(res)
