@@ -1,0 +1,14 @@
+def pr(ipls):
+    ls=ipls.split()
+    res={}
+    for i in ls:
+        c=0
+        for j in ls:
+            if i==j:
+                c+=1
+        if i not in res:
+            res[i] = c
+    return res
+
+inp=input()
+print(pr(inp))
