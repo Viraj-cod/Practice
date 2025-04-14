@@ -1,0 +1,10 @@
+def fib(num,c=0,f=0,l=1,add=[0,1]):
+    if c==num:
+        return add[:-2]
+    add.append(f+l)
+    f,l=l,f+l
+    c+=1
+    return fib(num,c,f,l,add)
+
+print(fib(6))
+    
