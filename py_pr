@@ -1,0 +1,21 @@
+def fact(num):
+    res=[]
+    for i in range(num):
+        res=res+[i]*num
+    return res
+print(fact(3))
+
+def fact(num):
+    res=[]
+    for i in range(num):
+        res.append([i]*num)
+    return res
+print(fact(3))
+
+def fact(num):
+    res=[]
+    for i in range(num):
+        for j in range(num):
+            res.append(tuple([i,j]))
+    return res
+print(fact(3))
