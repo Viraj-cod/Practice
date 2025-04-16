@@ -1,0 +1,23 @@
+def aisehi(dk):
+    for i in dk:
+        m=''
+        for j in dk[i]:
+            if j in 'aeoiu':
+                m+=j
+        dk[i]=m
+    return dk
+def main():
+    ey={}
+    print('Enter @ to exit!')
+    while True:
+        try:
+            inp=int(input("num:"))
+            wr=input('word:')
+            if wr=='#':
+                break
+            ey[inp]=wr
+        except:
+            print('Provide right input!')
+    print(aisehi(ey))yu
+if __name__ == '__main__':
+    main()
