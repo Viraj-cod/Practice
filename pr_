@@ -1,0 +1,31 @@
+def tp(lst):
+    res=[]
+    for i in lst:
+        if type(i) == int:
+            tm=0
+            while i > 0:
+                ls=i%10
+                tm=tm*10+ls
+                i=i//10
+            res.append(tm)
+    return res
+
+def main():
+    k=[]
+    print('Enter # to break')
+    while True:
+        inp=input("Enter the data")
+        if inp == '#':
+            break
+        if '0'<=inp<='9' and '.' not in inp:
+            k.append(int(inp))
+        elif '0.0'<=inp<='9.9':
+            k.append(float(inp))
+        else:
+            k.append(inp)
+    print(k)
+    print(tp(k))
+        
+    
+if __name__ == '__main__':
+    main()
