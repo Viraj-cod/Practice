@@ -1,0 +1,16 @@
+def bin_search(arr,val):
+    m=len(arr)//2
+    f=arr[:m]
+    s=arr[m:]
+    for i in range(len(arr)):
+        if (len(f) == 1 and f[0] == val) or (len(s)==1 and s[0]==val):
+            return True
+        elif val in f:
+            m=len(f)//2
+            f,s=f[:m],f[m:]
+        else:
+            m=len(s)//2
+            f,s=s[:m],s[m:]
+    return False
+print(bin_search([3,4,5,6,7,8,2],2))
+            
