@@ -1,0 +1,14 @@
+inp=6
+ot=[]
+for i in range(inp):
+    t=[]
+    for j in range(i+1):
+        if j==0 or j==i:
+            t.append(1)
+        else:
+            t.append(ot[i-1][j-1] + ot[i-1][j])
+    ot.append(t)
+
+for i in ot:
+    print(inp*' ',*i)
+    inp-=1
