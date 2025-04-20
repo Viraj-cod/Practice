@@ -1,0 +1,24 @@
+def selection_sort(arr):
+    for i in range(len(arr)-1):
+        mn=i
+        for j in range(i+1,len(arr)):
+            if arr[mn] > arr[j]:
+                mn=j
+        if mn != i:
+            arr[mn],arr[i]=arr[i],arr[mn]
+    return arr
+    
+def binary_Search(arr,val):
+    while True:
+        m=len(arr)//2
+        if arr[m] == val:
+            return True
+        elif len(arr) == 1 and arr[m] != val:
+            return False
+        elif val < arr[m]:
+            arr=arr[:m]
+        else:
+            arr=arr[m:]
+print(binary_Search(selection_sort([5,4,3,6,7,2]),99))
+#print(binary_Search([1,2,3,4,5,6,7],4))
+    
