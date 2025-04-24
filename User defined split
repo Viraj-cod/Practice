@@ -1,0 +1,14 @@
+def rev_numc(word):
+    n=[]
+    s,e=0,0
+    for i in range(len(word)):
+        if word[i] == ' ':
+            n.append(word[s:e+1].strip())
+            s=e
+        e+=1
+    n.append(word[s:].strip())
+    
+    return n
+
+print(rev_numc(input('Enter the Sentence:')))
+        
