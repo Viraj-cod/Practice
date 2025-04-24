@@ -1,0 +1,13 @@
+def rev_numc(word):
+    m = [i for i in word if i.isalpha()]
+    n = ''
+    
+    for i in word:
+        if i.isalpha():
+            n+=m.pop()
+        else:
+            n+=i
+    return n
+
+print(rev_numc('ABCD123EFG'))
+        
