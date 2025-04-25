@@ -1,0 +1,17 @@
+def rev(num):
+    res=0
+    while num>0:
+        res=(res*10)+num%10
+        num=num//10
+    return res
+
+def single(num):
+    res=0
+    num=rev(num)
+    while num>0:
+        res+=num%10
+        if res % 10 == 0:
+            return res
+        num=num//10
+    return -1
+print(single(586))
