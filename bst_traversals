@@ -1,0 +1,119 @@
+class node:
+    def __init__(self,val):
+        self.val=val
+        self.left=None
+        self.right=None
+    
+class BST:
+    def __init__(self):
+        self.root=None
+        self.temp=[]
+    
+    def insert(self,val):
+        if self.root is None:
+            self.root=node(val)
+            return 
+        return self.__insert(self.root,val)
+    
+    def __insert(self,current,val):
+        if current is None:
+            return node(val)
+        if current.val > val:
+            current.left = self.__insert(current.left,val)
+        elif current.val < val:
+            current.right = self.__insert(current.right,val)
+        return current
+    
+    def dis(self,root,level=0):
+        if root:
+            self.dis(root.right,level+1)
+            print(' '*4*level+'->',root.val)
+            self.dis(root.left,level+1)
+    
+    def contains(self,val):
+        return self.__contains(self.root,val)
+    
+    def __contains(self,current,val):
+        if current is None:
+            return False
+        elif current.val == val:
+            return True
+        elif current.val < val:
+            return self.__contains(current.right,val)
+        elif current.val > val:
+            return self.__contains(current.left,val)
+    
+    def delete(self,val):
+        return self.__delete(self.root,val)
+    
+    def get_min(self,current):
+        while current.left:
+            current=current.left
+        return current.val
+        
+    def __delete(self,current,val):
+        if current is None:
+            return None
+        elif current.val > val:
+            current.left=self.__delete(current.left,val)
+        elif current.val < val:
+            current.right=self.__delete(current.right,val)
+        else:
+            if current.left == None and current.left == None:
+                return None
+            elif current.left is None:
+                current=current.right
+            elif current.right is None:
+                current=current.left
+            else:
+                mn=self.get_min(current.right)
+                current.val = mn
+                current.right = self.__delete(current.right,mn)
+        return current
+                
+    def pre(self):
+        self.__pre(self.root)
+        return self.temp
+        
+    def __pre(self,root):
+        if root:
+            self.temp.append(root.val)
+            self.__pre(root.left)
+            self.__pre(root.right)
+    
+    def post(self):
+        self.temp=[]
+        self.__post(self.root)
+        return self.temp
+    
+    def __post(self,current):
+        if current:
+            self.__post(current.left)
+            self.__post(current.right)
+            self.temp.append(current.val)
+    
+    def inorder(self):
+        self.temp=[]
+        self.__in(self.root)
+        return self.temp
+    
+    def __in(self,current):
+        if current:
+            self.__in(current.left)
+            self.temp.append(current.val)
+            self.__in(current.right)
+        
+bst=BST()
+bst.insert(6)
+bst.insert(7)
+bst.insert(3)
+bst.insert(4)
+bst.insert(2)
+bst.insert(1)
+bst.dis(bst.root)
+#print('\n')
+#bst.delete(2)
+#bst.dis(bst.root)
+print(bst.pre())
+print(bst.post())
+print(bst.inorder())
