@@ -1,0 +1,24 @@
+class parent:
+    def __init__(self,nm):
+        self.nm=nm
+    def name(self):
+        print(f'Name is {self.nm}')
+    def sirname(self,sir):
+        print(f'Sirname is {sir}')
+    def loc(self,j):
+        print(f'location is {j}')
+
+class child(parent):
+    def __init__(self,val):
+        super().__init__(val) #if you want parent class method you have to initialise attibutes with super().__init(arg) methodd
+    def name(self,nm):
+        super().name()
+        #print(f'Name is {nm}')
+p=parent('ram')
+p.name()
+obj=child('hio')
+obj.name('Ashok')
+obj.sirname('Mehta')
+obj.loc('Ahmedabad!')
+
+        
