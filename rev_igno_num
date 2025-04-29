@@ -1,0 +1,11 @@
+k='abcd123efg'
+rem=[i for i in k if 'a'<=i<='z' or 'A'<=i<='Z']
+m=len(rem)-1
+o=''
+for i in range(len(k)):
+    if k[i] in '0123456789':
+        o=o+k[i]
+    else:
+        o+=rem[m]
+        m-=1
+print(o)
