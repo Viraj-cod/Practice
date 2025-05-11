@@ -1,0 +1,50 @@
+class HT:
+    def __init__(self,size):
+        self.__hash=[None]*size
+    
+    def __hash_method(self,word):
+        res=0
+        for letter in word:
+            res=(res+ord(letter)*23) % len(self.__hash)
+        return res
+    
+    def print_table(self):
+        for i,j in enumerate(self.__hash):
+            print(i,':',j)
+    
+    def set_item(self,key,val):
+        index=self.__hash_method(key)
+        if self.__hash[index] == None:
+            self.__hash[index] = []
+        self.__hash[index].append([key,val])
+    
+    def get(self,key):
+        index=self.__hash_method(key)
+        if self.__hash[index] is not None:
+            for i in range(len(self.hash[index])):
+                if self.__hash[index][i][0] == key:
+                    return self.__hash[index][i][1]
+        return None
+    
+    def keys(self):
+        res=[]
+        for i in range(len(self.__hash)):
+            if self.__hash[i] is not None:
+                for j in range(len(self.__hash[i])):
+                    res.append(self.__hash[i][j][0])
+        return res
+
+ht=HT(4)
+ht.set_item('raj','desai')
+ht.set_item('Iron','man')
+ht.set_item('Macho','man')
+ht.set_item('Fire','man')
+ht.set_item('Keron','pollard')
+ht.set_item('super','man')
+ht.set_item('bat','man')
+ht.print_table()
+print(ht.keys())
+
+    
+                
+            
