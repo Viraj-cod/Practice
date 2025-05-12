@@ -1,0 +1,25 @@
+def check_ord(word):
+    num=0
+    for i in word:
+        num+=ord(i)
+    return num
+
+def group_anagrams(lst):
+    res,ords,c=[],[],0
+    for i in lst:
+        temp=[]
+        for j in lst:
+            if check_ord(i) in ords:
+                break
+            elif check_ord(i) == check_ord(j):
+                temp.append(j)
+        if check_ord(i) not in ords:
+            ords.append(check_ord(i))
+            res.append(temp)
+        if c==len(lst):
+            break
+    return res
+
+print(group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+print(group_anagrams(["abc", "cba", "bac", "foo", "bar"]))
+print( group_anagrams(["listen", "silent", "triangle", "integral", "garden", "ranged"]) )
