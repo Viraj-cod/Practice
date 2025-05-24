@@ -1,0 +1,127 @@
+class node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+
+class linkedlist:
+    def __init__(self,val):
+        new=node(val)
+        self.head=new
+        self.tail=new
+        self.length=1
+    
+    def insert_first(self,val):
+        new=node(val)
+        if self.head is None:
+            self.head=new
+            self.tail=new
+        else:
+            new.next=self.head
+            self.head=new
+        self.length+=1
+        return
+    
+    def insert_last(self,val):
+        new=node(val)
+        if self.head is None:
+            self.head=new
+            self.tail=new
+        else:
+            self.tail.next=new
+            self.tail=new
+        self.length+=1
+        return 
+    
+    def get(self,index):
+        if index <0 or index >= self.length:
+            return None
+        temp=self.head
+        for _ in range(self.head):
+            temp=temp.next
+        return temp
+        
+    def insert_between(self,index,val):
+        if index < 0 or index > self.length:
+            return None
+        if index==self.length:
+            return insert_last(val)
+        new=node(val)
+        before=self.get(index-1)
+        new.next=before.next
+        before.next=new
+        self.length+=1
+        return
+
+    def display(self):
+        if self.length==0:
+            return None
+        temp=self.head
+        for _ in range(self.length):
+            print(temp.val,end='->')
+            temp=temp.next
+        print(None)
+    
+    def remove_first(self):
+        if self.length == 0:
+            return None
+        if self.length == 1:
+            self.head=None
+            self.tail=None
+        else:
+            temp=self.head
+            self.head=self.head.next
+        self.length-=1
+        return temp
+    
+    def remove_last(self):
+        if self.length == 0:
+            return None
+        fast=self.head
+        if self.length==1:
+            self.head=None
+            self.tail=None
+        else:
+            slow=fast
+            while fast.next:
+                slow=fast
+                fast = fast.next
+            slow.next=None
+            self.tail=slow
+        self.length-=1
+        return fast
+    
+    def remove_between(self,index):
+        if index < 0 or index > self.length:
+            return None
+        if self.length == index:
+            return self.remove_last()
+        if index == 1:
+            return self.remove_first()
+        before = self.get(index-1)
+        temp=before.next
+        before.next = temp.next
+        temp.next=None
+        self.length-=1
+        return temp
+    
+    def rev(self):
+        temp=self.head
+        self.head=self.tail
+        self.tail=temp
+        before=None
+        for _ in range(self.length):
+            after=temp.next
+            temp.next=before
+            before=temp
+            temp = after
+        self.display()
+
+ll=linkedlist(6)
+ll.insert_last(7)
+ll.insert_last(8)
+ll.insert_last(4)
+ll.insert_last(9)
+ll.display()
+ll.rev()
+            
+        
