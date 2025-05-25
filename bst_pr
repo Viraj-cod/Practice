@@ -1,0 +1,90 @@
+class node:
+    def __init__(self,val):
+        self.val=val
+        self.left=None
+        self.right=None
+
+class tree:
+    def __init__(self):
+        self.root=None
+        self.num=1
+    
+    def insert(self,val):
+        if self.root==None:
+            self.root = node(val)
+            return
+        return self.__insert(self.root,val)
+    
+    def __insert(self,current,val):
+        if current is None:
+            self.num+=1
+            return node(val)
+        if val < current.val:
+            current.left=self.__insert(current.left,val)
+        if val > current.val:
+            current.right=self.__insert(current.right,val)
+        return current
+    
+    def find(self,val):
+        return self.__search(self.root,val)
+    
+    def __search(self,current,val):
+        if current is None:
+            return False
+        if current.val == val:
+            return True
+        elif current.val > val :
+            return self.__search(current.left,val)
+        elif current.val < val:
+            return self.__search(current.right,val)
+        
+            
+    def display(self,root,level=0):
+        if root:
+            self.display(root.right,level+1)
+            print(' '*level*4+'->',root.val)
+            self.display(root.left,level+1)
+    
+    def find_min(self,current):
+        while current.left:
+            current = current.left
+        return current
+    
+    def delete(self,val):
+        return self.__delete(self.root,val)
+    
+    def __delete(self,current,val):
+        if current is None:
+            return None
+        elif current.val > val:
+            current.left = self.__delete(current.left,val)
+        elif current .val < val:
+            current.right = self.__delete(current.right,val)
+        else:
+            if current.left is None and current.right is None:
+                return None
+            elif current.right is None:
+                current=current.left
+            elif current.left is None:
+                current = current.right
+            else:
+                mn=self.find_min(current.right)
+                current.val=mn.val
+                current.right=self.__delete(current.right,mn.val)
+            self.num-=1
+        return current
+
+bst=tree()
+bst.insert(6)
+bst.insert(4)
+bst.insert(8)
+bst.insert(5)
+bst.insert(7)
+bst.display(bst.root)
+print(bst.find(8))
+print(bst.num)
+bst.delete(6)
+#bst.display(bst.root)
+print(bst.num)
+        
+        
